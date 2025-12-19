@@ -1,16 +1,16 @@
 import express from "express";
-import moviesRouter from "./routes/movies. js";
-import categoriesRouter from "./routes/categories.js";
+import moviesRouter from "./src/routes/movies.js";
+import categoriesRouter from "./src/routes/categories.js";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
-// New movie watchlist routes
+// Movie watch list API routes
 app.use("/api/v1/movies", moviesRouter);
 app.use("/api/v1/categories", categoriesRouter);
 
 app.listen(port, () => {
-	console.log(`Server listening on port ${port}`);
+	console.log(`🎬 Movie Watch list API listening on port ${port}`);
 });

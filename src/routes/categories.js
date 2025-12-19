@@ -5,15 +5,15 @@ import checkCategoryMiddleware from "../middlewares/categories.mjs";
 import { categoryValidationSchema } from "../utils/validators.js";
 
 const router = Router();
-const categories = JSON.parse(fs.readFileSync("./categories. json", "utf8"));
-const movies = JSON.parse(fs.readFileSync("./movies. json", "utf8"));
+const categories = JSON.parse(fs.readFileSync("./categories.json", "utf8"));
+const movies = JSON.parse(fs.readFileSync("./movies.json", "utf8"));
 
 // Get all categories
 router.get("/", (req, res) => {
 	// Add movie count to each category
 	const categoriesWithCount = categories.map((category) => ({
 		...category,
-		movieCount: movies.filter((movie) => movie.categoryId === category. id)
+		movieCount: movies.filter((movie) => movie.categoryId === category.id)
 			.length,
 	}));
 
@@ -63,13 +63,16 @@ router.post("/", checkSchema(categoryValidationSchema), (req, res) => {
 	if (!validationResults.isEmpty()) {
 		return res.status(400).json({
 			success: false,
-			errors: validationResults. array(),
+			errors: validationResults.array(),
 		});
 	}
 
 	const newCategory = {
 		...req.body,
-		id: categories.length > 0 ? categories[categories.length - 1].id + 1 : 1,
+		id:
+			categories.length > 0
+				? categories[categories.length - 1].id + 1
+				: 1,
 	};
 
 	categories.push(newCategory);
@@ -114,7 +117,7 @@ router.delete("/:id", checkCategoryMiddleware, (req, res) => {
 	if (hasMovies) {
 		return res.status(400).json({
 			success: false,
-			message: 
+			message:
 				"Cannot delete category with movies. Please reassign or delete movies first.",
 			data: null,
 		});

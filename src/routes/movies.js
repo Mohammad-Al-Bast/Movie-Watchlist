@@ -1,11 +1,11 @@
 import { Router } from "express";
 import fs from "fs";
 import { checkSchema, validationResult } from "express-validator";
-import checkMovieMiddleware from "../Middleware/movies.mjs";
+import checkMovieMiddleware from "../middlewares/movies.mjs";
 import { movieValidationSchema } from "../utils/validators.js";
 
 const router = Router();
-const movies = JSON.parse(fs.readFileSync("./movies. json", "utf8"));
+const movies = JSON.parse(fs.readFileSync("./movies.json", "utf8"));
 
 // Get all movies with optional filters
 router.get("/", (req, res) => {
