@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"title": "The Shawshank Redemption",
+		"genre": "Drama",
+		"year": 2024,
+		"director": "Frank Darabont",
+		"rating": 9.3,
+		"watched": true,
+		"notes": "Amazing movie about hope and friendship",
+		"watchedDate": "2024-11-15",
+		"categoryId": 1
+	},
+	{
+		"id": 2,
+		"title": "Inception",
+		"genre": "Sci-Fi",
+		"year": 2024,
+		"director": "Christopher Nolan",
+		"rating": null,
+		"watched": false,
+		"notes": "Want to watch this mind-bending thriller",
+		"watchedDate": null,
+		"categoryId": 2
+	},
+	{
+		"id": 3,
+		"title": "The Dark Knight",
+		"genre": "Action",
+		"year": 2024,
+		"director": "Christopher Nolan",
+		"rating": 9.0,
+		"watched": true,
+		"notes": "Best superhero movie ever! ",
+		"watchedDate": "2024-12-01",
+		"categoryId": 1
+	}
+]

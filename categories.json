@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "Favorites",
+		"description": "My all-time favorite movies"
+	},
+	{
+		"id": 2,
+		"name": "To Watch",
+		"description": "Movies I want to watch soon"
+	},
+	{
+		"id": 3,
+		"name": "Classics",
+		"description": "Classic movies to explore"
+	}
+]
