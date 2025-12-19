@@ -4,8 +4,8 @@ export const movieValidationSchema = {
 		notEmpty: {
 			errorMessage: "Title is required",
 		},
-		isLength:  {
-			options: { min:  1, max: 200 },
+		isLength: {
+			options: { min: 1, max: 200 },
 			errorMessage: "Title must be between 1 and 200 characters",
 		},
 	},
@@ -32,14 +32,14 @@ export const movieValidationSchema = {
 			errorMessage: "Director name must be less than 100 characters",
 		},
 	},
-	rating:  {
+	rating: {
 		optional: true,
 		isFloat: {
 			options: { min: 0, max: 10 },
 			errorMessage: "Rating must be between 0 and 10",
 		},
 	},
-	watched:  {
+	watched: {
 		optional: true,
 		isBoolean: {
 			errorMessage: "Watched must be a boolean value",
@@ -68,7 +68,7 @@ export const categoryValidationSchema = {
 			errorMessage: "Category name is required",
 		},
 		isLength: {
-			options:  { min: 2, max:  50 },
+			options: { min: 2, max: 50 },
 			errorMessage: "Category name must be between 2 and 50 characters",
 		},
 	},
