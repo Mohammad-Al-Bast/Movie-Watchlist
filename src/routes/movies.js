@@ -56,39 +56,6 @@ router.get("/", (req, res) => {
 	});
 });
 
-// Get statistics
-router.get("/stats/summary", (req, res) => {
-	const totalMovies = movies.length;
-	const watchedMovies = movies.filter((movie) => movie.watched).length;
-	const unwatchedMovies = totalMovies - watchedMovies;
-
-	const ratedMovies = movies.filter((movie) => movie.rating !== null);
-	const averageRating =
-		ratedMovies.length > 0
-			? (
-					ratedMovies.reduce((sum, movie) => sum + movie.rating, 0) /
-					ratedMovies.length
-			  ).toFixed(2)
-			: 0;
-
-	const genreCounts = movies.reduce((acc, movie) => {
-		acc[movie.genre] = (acc[movie.genre] || 0) + 1;
-		return acc;
-	}, {});
-
-	res.status(200).json({
-		success: true,
-		message: "Statistics retrieved successfully",
-		data: {
-			totalMovies,
-			watchedMovies,
-			unwatchedMovies,
-			averageRating: Number(averageRating),
-			genreDistribution: genreCounts,
-		},
-	});
-});
-
 // Get single movie by ID
 router.get("/:id", checkMovieMiddleware, (req, res) => {
 	res.status(200).json({
@@ -127,7 +94,7 @@ router.post("/", checkSchema(movieValidationSchema), (req, res) => {
 
 	res.status(201).json({
 		success: true,
-		message: "Movie added to watchlist successfully",
+		message: "Movie added to watch list successfully",
 		data: newMovie,
 	});
 });
@@ -173,7 +140,7 @@ router.delete("/:id", checkMovieMiddleware, (req, res) => {
 
 	res.json({
 		success: true,
-		message: "Movie deleted from watchlist successfully",
+		message: "Movie deleted from watch list successfully",
 		data: deletedMovie,
 	});
 });

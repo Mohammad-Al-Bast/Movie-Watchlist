@@ -29,10 +29,22 @@
 		"genre": "Action",
 		"year": 2024,
 		"director": "Christopher Nolan",
-		"rating": 9.0,
+		"rating": 9,
 		"watched": true,
 		"notes": "Best superhero movie ever! ",
 		"watchedDate": "2024-12-01",
 		"categoryId": 1
+	},
+	{
+		"title": "Oppenheimer",
+		"genre": "Biography",
+		"year": 2023,
+		"director": "Christopher Nolan",
+		"rating": 8.5,
+		"watched": true,
+		"notes": "Epic historical drama about the Manhattan Project",
+		"watchedDate": "2025-12-19",
+		"categoryId": 1,
+		"id": 4
 	}
 ]

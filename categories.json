@@ -13,5 +13,10 @@
 		"id": 3,
 		"name": "Classics",
 		"description": "Classic movies to explore"
+	},
+	{
+		"name": "Action",
+		"description": "Action movies to explore",
+		"id": 4
 	}
 ]
