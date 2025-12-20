@@ -17,7 +17,6 @@ A RESTful API built with Express.js for managing your personal movie watch list.
 -   **Node.js** - Runtime environment
 -   **Express.js** - Web framework
 -   **express-validator** - Input validation
--   **uuid** - Unique identifier generation
 -   **File-based storage** - JSON files for data persistence
 
 ## Project Structure
